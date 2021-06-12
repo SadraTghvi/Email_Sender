@@ -4,7 +4,6 @@
 }
 
 
-
 #nav{
     background-color: black;
 }
@@ -24,4 +23,14 @@ li > a{
     margin: 5px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.main{
+    width: 50vh;
+    height: 50vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
