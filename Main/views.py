@@ -14,8 +14,8 @@ def send_email(request):
     subject = request.POST["subject"]
     name = request.user.username
     if subject and email:
-        messages.info(request,"succes")
-        return render(request, "form.html")
+        messages.success(request,"your email has been sent")
+        return redirect("main")
     else:
-        messages.info(request, "nop")
+        messages.error(request, "there is something wrong with your form")
         return redirect("main")
