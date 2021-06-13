@@ -45,7 +45,7 @@
     {% if messages %}
         {% for message in messages %}
             <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                <h2 >{{ message }}</h2>
+                <h2 class="h2">{{ message }}</h2>
             </div>
         {% endfor %}
     {% endif %}
@@ -59,7 +59,7 @@
 
     <div class="container">
 
-        <div style="margin-top: 30px;" class="row">
+        <div style="margin-top: 300px;" class="row">
             <form action="/send_email/" method="post" class="col s12">
                 {% csrf_token %}
                 <div class="row">
