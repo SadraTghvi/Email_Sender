@@ -45,26 +45,26 @@
     <div class="container">
 
         <div style="margin-top: 30px;" class="row">
-            <form method="post" class="col s12">
+            <form action="/send_email/" method="post" class="col s12">
                 {% csrf_token %}
                 <div class="row">
                     <div class="input-field col s6">
-                        <input style="cursor: not-allowed;" disabled placeholder="Placeholder" id="first_name" type="text" value="{{user.username}}" class="validate">
-                        <label for="first_name">First Name</label>
+                        <input style="cursor: not-allowed;" name="name" disabled placeholder="Placeholder" id="first_name" type="text" value="{{user.username}}" class="validate">
+                        <label for="first_name">Name</label>
                     </div>
                     
                 </div>
 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input   id="disabled" type="text" class="validate" >
+                        <input  name="subject"  id="disabled" type="text" class="validate" >
                         <label for="disabled">Subject</label>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" name="email" type="email" class="validate">
                         <label for="email">Email</label>
                     </div>
                 </div>
