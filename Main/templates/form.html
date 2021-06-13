@@ -4,8 +4,8 @@
 <div class="mt-5 pt-4">
     {% if messages %}
         {% for message in messages %}
-            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                <h2 >{{ message }}</h2>
+            <div class="alert  alert-dismissible fade show"  role="alert">
+                <h2 class="h2" >{{ message }}</h2>
             </div>
         {% endfor %}
     {% endif %}
