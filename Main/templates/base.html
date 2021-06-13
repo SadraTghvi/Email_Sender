@@ -8,6 +8,7 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -39,6 +40,20 @@
       </ul>
     </div>
   </nav>
+
+<div class="mt-5 pt-4">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                <h2 >{{ message }}</h2>
+            </div>
+        {% endfor %}
+    {% endif %}
+    
+</div>
+{% block content %}
+
+{% endblock content %}
 
 {% if user.is_authenticated %}
 
@@ -77,6 +92,7 @@
 {% else %}
     <h2 style="text-align: center;">Sry But You Are Not Logged In </h2>
 {% endif %}
+
 
         
 </body>
