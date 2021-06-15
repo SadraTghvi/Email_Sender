@@ -6,3 +6,4 @@ urlpatterns = [
     path("send_email/", send_email, name="send_email"),
 ]
 
+app_name = "main"
