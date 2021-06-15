@@ -3,16 +3,18 @@
 {% block content %}
 
 <div class="header-bar">
-    <h1>Login</h1>
+    <h1 style="text-align: center;"> Login </h1>
 </div>
 
 <div class="card-body">
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input class="button" type="submit" value="Login">
-    </form>
-    <p>Don't have an account? <a href="#">Register</a></p>
+    <div class="container">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="button" type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="#">Register</a></p>
+    </div>
 </div>
 
 
