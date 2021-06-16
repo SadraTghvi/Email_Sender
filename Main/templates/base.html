@@ -32,10 +32,10 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
         {% if user.is_authenticated %}
-            <li><a href="">Logout</a></li>
+            <li><a href="{% url 'account:logout' %}">Logout</a></li>
         {% else %}
-            <li><a href="">Login</a></li>
-            <li><a href="">SignIn</a></li>
+            <li><a href="{% url 'account:login' %}">Login</a></li>
+            <li><a href="{% url 'account:signup' %}">SignUp</a></li>
         {% endif %}
       </ul>
     </div>
