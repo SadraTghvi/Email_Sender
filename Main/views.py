@@ -7,9 +7,13 @@ import time
 
 # Create your views here.
 
+
+@login_required
 def main(request):
     return render(request,"base.html")
 
+
+@login_required
 def send_email(request):
     email = request.POST["email"]
     subject = request.POST["subject"]
