@@ -1,9 +1,9 @@
-from django.contrib.auth import logout as system_logout
 from django.shortcuts import redirect, render
 from django.contrib.auth.views import *
 from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import logout as system_logout
 from django.contrib.auth import login
 
 
@@ -16,15 +16,16 @@ def main(request):
 class AccountLogin(LoginView):
     template_name = 'login.html'
     fields = "__all__"
-    redirect_authenticated_user = False
+    redirect_authenticated_user = True
     
     def get_success_url(self):
         messages.success(self.request,"You Have Logged In successfuly")
         return reverse_lazy("main:main")
 
 
-def logout(e):
-    system_logout(e)
+def logout(request):
+    messages.success(request, "You Have Logged Out successfuly")
+    system_logout(request)
     return HttpResponseRedirect('/')
 
 class CustomLogoutView(LogoutView):
